@@ -12,6 +12,11 @@ class Cookbook
 		puts "Added a recipe to the collection: #{recipe.recipe_title}"
 	end
 
+	def delete_recipe(recipe)
+		@recipes.delete(recipe) {"not found"}
+		puts "Successfully deleted #{recipe.recipe_title}."
+	end
+
 	def recipe_titles
 		@recipes.each { |recipe|
 			puts recipe.recipe_title}
@@ -31,6 +36,10 @@ class Cookbook
 			@recipes[x-1].print_recipe
 			puts " "
 		end
+	end
+
+	def celebrity_plug
+		puts "This cookbook was approved by Gordon Ramsey!"
 	end
 end
 
